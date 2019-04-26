@@ -3,15 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
     "react-scripts": "3.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start-presentacion": "mdx-deck ./presentacion/deck.mdx",
+    "build-presentation": "mdx-deck build ./presentacion/deck.mdx"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -29,6 +31,6 @@
     ]
   },
   "devDependencies": {
-    "mdx-deck": "^2.3.2"
+    "mdx-deck": "2.3.2"
   }
 }
