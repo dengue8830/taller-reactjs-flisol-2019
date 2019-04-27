@@ -1,5 +1,6 @@
 import { Head, Notes } from 'mdx-deck'
 export { default as theme } from './theme'
+import { LiveCode } from 'mdx-deck-live-code';
 
 <!--
  Fuentes para marcado
@@ -21,7 +22,7 @@ notas
 ---
 
 # Objetivo
-Adquirir conocimientos sólidos en ReactJs a través de una aproximación práctica
+Adquirir conocimientos básicos en ReactJs a través de una aproximación práctica
 
 ---
 
@@ -35,3 +36,79 @@ Es una librería para construir interfaces.
 ```notes
 - hace una y solo una cosa y lo hace bien
 - todo lo que no sea interfaces es problema tuyo
+```
+
+---
+
+## > ¿Cómo funciona?
+
+De una forma declarativa
+Nosotros administramos el qué (los datos) y react el cómo (pintado)
+
+```jsx
+  ...
+  <Sidebar
+    filtros={filtrosActuales}
+    onChange={nuevosFiltros => ...actualizamosFiltros}
+  />
+  <Listado datos={datosFiltrados} />
+  ...
+```
+
+---
+
+## > ¿Cómo funciona?
+
+Basado en el estado
+```notes
+Tu componente reacciona a cambios de estado
+```
+
+---
+
+<LiveCode title="Reacciona a cambios de estado" code={`
+class Ejemplo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      nombre: '-'
+    }
+  }
+  render() {
+    return (
+      <div>
+        <input
+          onChange={e => this.setState({ nombre: e.currentTarget.value })}
+          placeholder='Escribe algo' 
+        />
+        <label 
+          style={{color: '#212121'}}>
+           hola {this.state.nombre}
+          </label>
+      </div>
+    );
+  }
+}
+`} size="large" editorProps={{ style: { fontSize: '0.4em', background: '#001628' } }} />
+
+---
+
+## > ¿Cómo funciona?
+Basado en componentes
+
+---
+
+- Clase
+```jsx
+class Ejemplo extends React.Component { ... }
+```
+- Función (sin estado ni ciclos de vida por defecto)
+```jsx
+function Ejemplo(props) {
+  return ...;
+}
+```
+- El uso es el mismo
+```jsx
+<Ejemplo algunParametro='hola' />
+```
