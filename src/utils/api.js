@@ -7,7 +7,7 @@ const personas = [
   },
   {
     nombre: 'Marta Peralta',
-    genero: 'f',
+    genero: 'm',
     edad: 30,
     fotoUrl: 'https://i.imgur.com/R89Zajr.jpg'
   }
